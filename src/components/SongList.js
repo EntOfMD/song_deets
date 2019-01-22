@@ -27,13 +27,13 @@ class SongList extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state);
     return { songs: state.songs };
 };
 
 export default connect(
+    //the connect does special operation on the fx inside of this obj. It looks at all the functions inside and it wraps them up in another JS fx. When we call the new fx, connect will auto call actioncreator , take the action that gets returned, and it'll call it.
     mapStateToProps,
     {
-        selectSong
+        selectSong //if we don't pass this, redux won't be linked
     }
 )(SongList);
